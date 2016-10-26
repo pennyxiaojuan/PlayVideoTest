@@ -16,6 +16,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //onCreate方法获取一些控件的实例
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         play = (Button) findViewById(R.id.play);
@@ -51,7 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     protected void onDestroy(){
         super.onDestroy();
         if (videoView!=null){
-            videoView.suspend();
+            videoView.suspend();//将VidioView所占用的资源释放掉
         }
     }
 }
